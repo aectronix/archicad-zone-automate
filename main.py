@@ -5,7 +5,7 @@ from archicad import ACConnection
 start = time.time()
 config = {
 	'layers': {
-		'single': 'S10 Single spaces (rooms)',								# layer name (to filter out other cases)
+		'single': 'S10 Single spaces (rooms)',								# layer name to filter zones (set to None in order to fetch every zone)
 	},
 	'props': {
 		'layer': 'ModelView_LayerName',										# property for single zone layer's name

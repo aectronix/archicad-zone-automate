@@ -15,6 +15,8 @@ Project file shall contain the next user properties:
 The name of these properties may differ, so there's a config section where their names and groups could be specified individually.
 Zones are filtered by the given single `layer` name in the config section.
 
+Works fine both internally and externally.
+
 
 
 
