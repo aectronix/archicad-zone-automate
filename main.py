@@ -80,7 +80,7 @@ class ZoneCommands():
 		# extract & store zone data
 		print(f'{timer()}: Processing {len(zones)} items...')
 		for zp in zones_prop:
-			if zp.propertyValues[0].propertyValue.status != 'notAvailable' and zp.propertyValues[1].propertyValue.value == self.conf['layers']['single']:
+			if zp.propertyValues[0].propertyValue.status != 'notAvailable' and (self.conf['layers']['single'] or zp.propertyValues[1].propertyValue.value == self.conf['layers']['single']):
 				idx = zones_prop.index(zp)
 				# print('> Processing ' + str(idx+1) + '/' + str(len(zones)) + ' (' + str(zones[idx].elementId.guid) + ')...', end='\r')
 				zone_tag = zp.propertyValues[0].propertyValue.value
