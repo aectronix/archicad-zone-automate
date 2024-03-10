@@ -84,7 +84,7 @@ class ZoneCommands():
 				idx = zones_prop.index(zp)
 				# print('> Processing ' + str(idx+1) + '/' + str(len(zones)) + ' (' + str(zones[idx].elementId.guid) + ')...', end='\r')
 				zone_tag = zp.propertyValues[0].propertyValue.value
-				zone_area = zp.propertyValues[3].propertyValue.value
+				zone_area = round(zp.propertyValues[3].propertyValue.value, 2)
 				zone_live = zone_area if zp.propertyValues[4].propertyValue.value else 0
 
 				zones_data[zone_tag] = {
@@ -108,7 +108,7 @@ class ZoneCommands():
 		                "propertyValue": {
 		                    "type": "area",
 		                    "status": "normal",
-		                    "value": zones_data[zone.propertyValues[0].propertyValue.value]['gross']
+		                    "value": round(zones_data[zone.propertyValues[0].propertyValue.value]['gross'], 2)
 		                }
 		            },
 					{
@@ -117,7 +117,7 @@ class ZoneCommands():
 		                "propertyValue": {
 		                    "type": "area",
 		                    "status": "normal",
-		                    "value": zones_data[zone.propertyValues[0].propertyValue.value]['live']
+		                    "value": round(zones_data[zone.propertyValues[0].propertyValue.value]['live'], 2)
 		                }
 		            },
 					{
