@@ -17,7 +17,8 @@ config = {
 		'area_gross': ['ZONES - Gross', 'Zone Area Gross'],					# group name & property of zone gross area field
 		'area_live': ['ZONES - Gross', 'Zone Area Live'],					# group name & property of zone live area field
 		'update': ['ZONES - Gross', 'Zone Update'],							# group name & property to store the last refresh date
-	}
+	},
+	'round': 1																# rounding value, the number of digits after the point
 }
 
 
@@ -84,7 +85,7 @@ class ZoneCommands():
 				idx = zones_prop.index(zp)
 				# print('> Processing ' + str(idx+1) + '/' + str(len(zones)) + ' (' + str(zones[idx].elementId.guid) + ')...', end='\r')
 				zone_tag = zp.propertyValues[0].propertyValue.value
-				zone_area = round(zp.propertyValues[3].propertyValue.value, 2)
+				zone_area = round(zp.propertyValues[3].propertyValue.value, self.conf['round'])
 				zone_live = zone_area if zp.propertyValues[4].propertyValue.value else 0
 
 				zones_data[zone_tag] = {
@@ -108,7 +109,7 @@ class ZoneCommands():
 		                "propertyValue": {
 		                    "type": "area",
 		                    "status": "normal",
-		                    "value": round(zones_data[zone.propertyValues[0].propertyValue.value]['gross'], 2)
+		                    "value": round(zones_data[zone.propertyValues[0].propertyValue.value]['gross'], self.conf['round'])
 		                }
 		            },
 					{
@@ -117,7 +118,7 @@ class ZoneCommands():
 		                "propertyValue": {
 		                    "type": "area",
 		                    "status": "normal",
-		                    "value": round(zones_data[zone.propertyValues[0].propertyValue.value]['live'], 2)
+		                    "value": round(zones_data[zone.propertyValues[0].propertyValue.value]['live'], self.conf['round'])
 		                }
 		            },
 					{
@@ -136,5 +137,5 @@ class ZoneCommands():
 
 # Run zone operations
 if __name__ == '__main__':
-	ZoneCommands().cmd_area_update()
-	print(f'{timer()}: Done in %s sec' % (round(time.time() - start, 2)))
+	print(f'Please run the next scripts:\n\n\t"area_update.py": to summarize zone areas')
+	# print(f'{timer()}: Done in %s sec' % (round(time.time() - start, 2)))
