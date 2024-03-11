@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<BuildingInformation>
+	<PropertyDefinitionGroups>
+		<PropertyDefinitionGroup>
+			<Name>ZONES</Name>
+			<Description>Properties to specify the usage of Spaces and Zones inside a building</Description>
+			<PropertyDefinitions>
+				<PropertyDefinition>
+					<Name>Zone Living</Name>
+					<Description>Defines whether the zone counts as living or not.</Description>
+					<ValueDescriptor Type="SingleValueDescriptor">
+						<ValueType>Boolean</ValueType>
+					</ValueDescriptor>
+					<MeasureType>Default</MeasureType>
+					<DefaultValue>
+						<DefaultValueType>Expression</DefaultValueType>
+						<ExpressionDefaultValue>
+							<Expression>IF ( OR ( CONTAINS ( "Bedroom", {Property:C55E9728-EB60-40A2-AA76-77B061FA4ADA} ), CONTAINS ( "Living", {Property:C55E9728-EB60-40A2-AA76-77B061FA4ADA} ) ), TRUE, FALSE )</Expression>
+						</ExpressionDefaultValue>
+					</DefaultValue>
+					<ClassificationIDs>
+						<ClassificationID>
+							<ItemID>Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>External Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Parking Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Internal Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Access Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Commercial Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Communication Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Cultural Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Educational Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Equipment Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Medical Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Office Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Production Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Recreational Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Research Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Residential Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Storage Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Transport Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>General Floor Area Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+					</ClassificationIDs>
+				</PropertyDefinition>
+			</PropertyDefinitions>
+		</PropertyDefinitionGroup>
+		<PropertyDefinitionGroup>
+			<Name>ZONES - Gross</Name>
+			<Description/>
+			<PropertyDefinitions>
+				<PropertyDefinition>
+					<Name>Zone Tag</Name>
+					<Description>Zone tag defines the logic of unique identifier for each  zone assembly by which all the gross areas are going to be grouped and allocated.</Description>
+					<ValueDescriptor Type="SingleValueDescriptor">
+						<ValueType>String</ValueType>
+					</ValueDescriptor>
+					<MeasureType>Default</MeasureType>
+					<DefaultValue>
+						<DefaultValueType>Expression</DefaultValueType>
+						<ExpressionDefaultValue>
+							<Expression>IF ( CONTAINS ( "D", {Property:7E221F33-829B-4FBC-A670-E74DABCE6289}, TRUE ) = TRUE, CONCAT ( "LD-", {Property:7E221F33-829B-4FBC-A670-E74DABCE6289} ), CONCAT ( "L", STR ( {Property:14D1CF3B-6A96-4E77-B84C-E39D407B1DEF}, 0 ), "-", {Property:7E221F33-829B-4FBC-A670-E74DABCE6289}, "" ) )</Expression>
+						</ExpressionDefaultValue>
+					</DefaultValue>
+					<ClassificationIDs>
+						<ClassificationID>
+							<ItemID>Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>External Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Parking Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Internal Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Access Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Commercial Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Communication Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Cultural Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Educational Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Equipment Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Medical Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Office Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Production Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Recreational Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Research Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Residential Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Storage Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Transport Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>General Floor Area Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+					</ClassificationIDs>
+				</PropertyDefinition>
+				<PropertyDefinition>
+					<Name>Zone Area Gross</Name>
+					<Description>Property to keep assembly's gross area, filled by the script.</Description>
+					<ValueDescriptor Type="SingleValueDescriptor">
+						<ValueType>Numeric</ValueType>
+					</ValueDescriptor>
+					<MeasureType>Area</MeasureType>
+					<DefaultValue>
+						<DefaultValueType>Basic</DefaultValueType>
+						<Variant Type="NumVariant">
+							<Status>Normal</Status>
+							<Value>0</Value>
+						</Variant>
+					</DefaultValue>
+					<ClassificationIDs>
+						<ClassificationID>
+							<ItemID>Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>External Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Parking Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Internal Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Access Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Commercial Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Communication Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Cultural Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Educational Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Equipment Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Medical Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Office Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Production Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Recreational Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Research Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Residential Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Storage Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Transport Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>General Floor Area Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+					</ClassificationIDs>
+				</PropertyDefinition>
+				<PropertyDefinition>
+					<Name>Zone Area Live</Name>
+					<Description>Property to keep assembly's gross live area, filled by the script.</Description>
+					<ValueDescriptor Type="SingleValueDescriptor">
+						<ValueType>Numeric</ValueType>
+					</ValueDescriptor>
+					<MeasureType>Area</MeasureType>
+					<DefaultValue>
+						<DefaultValueType>Basic</DefaultValueType>
+						<Variant Type="NumVariant">
+							<Status>Normal</Status>
+							<Value>0</Value>
+						</Variant>
+					</DefaultValue>
+					<ClassificationIDs>
+						<ClassificationID>
+							<ItemID>Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>External Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Parking Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Internal Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Access Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Commercial Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Communication Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Cultural Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Educational Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Equipment Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Medical Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Office Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Production Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Recreational Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Research Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Residential Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Storage Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Transport Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>General Floor Area Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+					</ClassificationIDs>
+				</PropertyDefinition>
+				<PropertyDefinition>
+					<Name>Zone Update</Name>
+					<Description>Contains the last refresh date, set by the python script,</Description>
+					<ValueDescriptor Type="SingleValueDescriptor">
+						<ValueType>String</ValueType>
+					</ValueDescriptor>
+					<MeasureType>Default</MeasureType>
+					<DefaultValue>
+						<DefaultValueType>Basic</DefaultValueType>
+						<Variant Type="StringVariant">
+							<Status>Normal</Status>
+							<Value>-</Value>
+						</Variant>
+					</DefaultValue>
+					<ClassificationIDs>
+						<ClassificationID>
+							<ItemID>Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>External Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Parking Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Internal Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Access Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Commercial Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Communication Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Cultural Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Educational Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Equipment Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Medical Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Office Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Production Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Recreational Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Research Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Residential Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Storage Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>Transport Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+						<ClassificationID>
+							<ItemID>General Floor Area Space</ItemID>
+							<SystemIDName>ARCHICAD Classification</SystemIDName>
+							<SystemIDVersion>v 2.0</SystemIDVersion>
+						</ClassificationID>
+					</ClassificationIDs>
+				</PropertyDefinition>
+			</PropertyDefinitions>
+		</PropertyDefinitionGroup>
+	</PropertyDefinitionGroups>
+</BuildingInformation>
