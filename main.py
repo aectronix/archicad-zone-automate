@@ -133,9 +133,10 @@ class ZoneCommands():
 				]
 
 		self.acc.commands.SetPropertyValuesOfElements(query)
+
+		print(f'{timer()}: Done in %s sec' % (round(time.time() - start, 2)))
 	
 
 # Run zone operations
 if __name__ == '__main__':
-	print(f'Please run the next scripts:\n\n\t"area_update.py": to summarize zone areas')
-	# print(f'{timer()}: Done in %s sec' % (round(time.time() - start, 2)))
+	print(f'Please run the next scripts:\n\n>\t"area_update.py": to summarize zone areas')
